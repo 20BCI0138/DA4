@@ -26,7 +26,7 @@
     </div>
     <script src="script.js"></script>
     <?php
-    $con = mysqli_connect("localhost", "shuanak", "mysqlPassword", "students");
+    $con = mysqli_connect("localhost", "shaunak", "mysqlPassword", "IWP");
     if ($con === false) {
         die("ERROR: " . mysqli_connect_error());
     }

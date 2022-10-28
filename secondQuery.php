@@ -26,7 +26,7 @@
     </div>
     <script src="nav.js"></script>
     <?php
-        $con = mysqli_connect("localhost", "root", "", "students");
+        $con = mysqli_connect("localhost", "shaunak", "mysqlPassword", "IWP");
         if ($con === false) {
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
@@ -35,7 +35,7 @@
         if ($result2) {
             echo '<script>alert("Database updated successfully")</script>';
         }
-        $sql = "SELECT name,regno,course,comment FROM student WHERE internal < (SELECT AVG(internal) FROM student)";
+        $sql = "SELECT name, regno, course, comment FROM student WHERE internal < (SELECT AVG(internal) FROM student)";
         $result = mysqli_query($con, $sql);
         if (mysqli_num_rows($result) > 0) {
             echo "<center><table cellpadding=10px><tr><th>Name</th><th>RegNo</th><th>Course</th><th>Comment</th></tr>";
